@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Guessing Game</title>
+</head>
+
+<body>
+
+    <h2>Guessing Game</h2>
+    <button onclick="startGame()">Start Game</button>
+
+    <script>
+        function startGame() {
+            // Generate a random number between 1 and 20
+            var secret = Math.floor(Math.random() * 20) + 1;
+
+            // Ask for first guess (prompt + parseInt in one line)
+            var guess = parseInt(prompt("Please guess the secret number (1-20):"));
+
+            // Keep looping until guess is correct
+            while (guess !== secret) {
+
+                if (guess < secret) {
+                    alert("Incorrect, too low");
+                }
+                else if (guess > secret) {
+                    alert("Incorrect, too high");
+                }
+
+                // Ask again
+                guess = parseInt(prompt("Please guess the secret number (1-20):"));
+            }
+
+            // When correct
+            alert("Correct Guess!");
+        }
+    </script>
+
+</body>
+
+</html>

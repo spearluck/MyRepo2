@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Shopping Cart</title>
+</head>
+
+<body>
+
+    <h2>Shopping Cart</h2>
+
+    <table border="1">
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Total</th>
+            <th>Actions</th>
+        </tr>
+
+        <tr>
+            <td>Coke</td>
+            <td>R7.50</td>
+            <td id="qty0">0</td>
+            <td id="total0">R0.00</td>
+            <td>
+                <button onclick="addToCart(0)">Add</button>
+                <button onclick="removeFromCart(0)">Remove</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Kit Kat</td>
+            <td>R9.50</td>
+            <td id="qty1">0</td>
+            <td id="total1">R0.00</td>
+            <td>
+                <button onclick="addToCart(1)">Add</button>
+                <button onclick="removeFromCart(1)">Remove</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Bar One</td>
+            <td>R8.50</td>
+            <td id="qty2">0</td>
+            <td id="total2">R0.00</td>
+            <td>
+                <button onclick="addToCart(2)">Add</button>
+                <button onclick="removeFromCart(2)">Remove</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Fanta</td>
+            <td>R7.50</td>
+            <td id="qty3">0</td>
+            <td id="total3">R0.00</td>
+            <td>
+                <button onclick="addToCart(3)">Add</button>
+                <button onclick="removeFromCart(3)">Remove</button>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <button onclick="checkout()">Checkout</button>
+    <p id="totalOutput"></p>
+
+    <script>
+        let prices = [7.5, 9.5, 8.5, 7.5];
+        let qty = [0, 0, 0, 0];
+        let totals = [0, 0, 0, 0];
+
+        function addToCart(i) {
+            qty[i]++;
+            totals[i] = qty[i] * prices[i];
+            update();
+        }
+
+        function removeFromCart(i) {
+            if (qty[i] > 0) {
+                qty[i]--;
+                totals[i] = qty[i] * prices[i];
+            }
+            update();
+        }
+
+        function update() {
+            for (let i = 0; i < qty.length; i++) {
+                document.getElementById("qty" + i).innerHTML = qty[i];
+                document.getElementById("total" + i).innerHTML = "R" + totals[i].toFixed(2);
+            }
+        }
+
+        function checkout() {
+            let sum = 0;
+            for (let i = 0; i < totals.length; i++) {
+                sum += totals[i];
+            }
+            document.getElementById("totalOutput").innerHTML = "Total: R" + sum.toFixed(2);
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+/* Container for the bubbles */
+#o {
+    width: 400px;
+    /* Fixed width */
+    height: 400px;
+    /* Fixed height */
+    position: relative;
+    /* Allows absolutely positioned children to be placed relative to this container */
+    margin-left: auto;
+    /* Center horizontally */
+    margin-right: auto;
+    /* Center horizontally */
+}
+
+/* Style for each bubble */
+.bubble {
+    border: 8px outset #ec05e0;
+    /* White border around the bubble */
+    display: block;
+    /* Treated as a block-level element */
+    position: absolute;
+    /* Allows free placement within the container */
+    border-radius: 50px;
+    /* Rounded edges to make it look like a circle */
+    -webkit-border-radius: 50px;
+    /* Rounded edges for older WebKit browsers */
+    -moz-border-radius: 50px;
+    /* Rounded edges for older Firefox versions */
+}
+
+.bubble {
+    border: 8px outset #0905ec;
+    /* White border around the bubble */
+    display: block;
+    /* Treated as a block-level element */
+    position: absolute;
+    /* Allows free placement within the container */
+    border-radius: 60px;
+    /* Rounded edges to make it look like a circle */
+    -webkit-border-radius: 60px;
+    /* Rounded edges for older WebKit browsers */
+    -moz-border-radius: 60px;
+    /* Rounded edges for older Firefox versions */
+}
+
+/* Set the background color of the entire page */
+body {
+    background-color: #070707;
+    /* background */
+}
